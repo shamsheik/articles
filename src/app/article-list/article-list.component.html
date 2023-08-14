@@ -1,0 +1,27 @@
+<div class="content">
+    <h2>Popular Supernatural Books</h2>
+    <div class="article-list-card" *ngFor="let article of articles">
+        <div class="article-card">
+        <div  class="article-card-list">
+            <div class="article-image">
+                <img [src]="article.imageUrl"/>
+            </div>
+            <div class="article-content">
+                <div class="article-content-title">
+                    <h2>{{article.title}}</h2>
+                </div>
+                <div class="article-content-description">
+                    <h3>{{article.description}}</h3>
+                    <p>{{article.content}}</p>
+                </div>
+                <div class="article-list-content">
+                    <a [routerLink]="['/articles',article.key]" class="continue-reading">Continue Reading</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>
+
+

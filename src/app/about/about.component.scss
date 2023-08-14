@@ -1,0 +1,124 @@
+/* styles.scss */
+
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.article-table {
+    margin-top: 20px;
+    padding: 0;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .article-body{
+    border-radius: 25px;
+    font-size: 12px;
+    margin: 20px;
+    display: -webkit-box; /* This is necessary for Safari */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  }
+  /* Style the table header (thead) */
+  thead {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  /* Style the table header cells (th) */
+  th {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style the table body (tbody) */
+  tbody {
+    background-color: #fff;
+  }
+  
+  /* Style the table body cells (td) */
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  .edit-button + .delete-button {
+    margin-left: 10px;
+  }
+  .book-list {
+    display: flex;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    gap: 24px;
+    display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  grid-gap: 20px;
+	  justify-content: space-around
+  }
+  .container {
+    padding: 20px;
+    margin-right: 100px;
+    display: grid;
+    justify-content: center;
+  }
+  .book {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    width: 200px; /* Adjust this value as per your desired width */
+    border: 1px solid #ccc;
+    margin: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  .small-image {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .trash-icon {
+    text-align: right;
+    color: #6c757d;
+    padding-bottom: 15px;
+  }
+.card{
+  text-align: center;
+	background-color: #222831;
+	height: 20rem;
+	color: white
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.continue-reading{
+  color:#6c757d;
+}
+
+@media(max-width:600px) {
+	.book-list {
+		grid-template-columns: 1fr
+	}
+}

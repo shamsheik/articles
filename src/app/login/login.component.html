@@ -1,0 +1,69 @@
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+				<div class="group">
+					<label for="user" class="label">Email</label>
+					<input id="email" type="text" class="input" formControlName="email">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="password">
+				</div>
+                <div class="group">
+					<label for="pass" class="label">Role</label>
+					<select formControlName="role" class="selectrole">
+                        <option *ngFor="let role of roles" [value]="role.key">{{role.value}}</option>
+                    </select>
+				</div>
+				<div class="group" *ngIf="errorMessage" class="error-message">
+					{{ errorMessage }}
+				  </div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+            </form>
+				<div class="hr"></div>
+			</div>
+			<div class="sign-up-htm">
+                <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input" formControlName="registerUser">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="registerPassword">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="repeatpassword">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input" formControlName="registerEmail">
+				</div>
+                <div class="group">
+					<label for="pass" class="label">Role</label>
+					<select formControlName="registerRole" class="selectrole">
+                        <option *ngFor="let role of roles" [value]="role.key">{{role.value}}</option>
+                    </select>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+            </form>
+            <div class="group" *ngIf="userRegistered">
+                <label for="tab-1">User Registered Successfully</label>
+            </div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<label for="tab-1">Already Member?</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
